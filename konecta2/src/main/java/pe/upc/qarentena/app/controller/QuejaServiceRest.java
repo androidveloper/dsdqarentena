@@ -18,6 +18,8 @@ public class  QuejaServiceRest {
     public List<CategoriaQueja> listarCategorias()
     {
 
+
+
         try {
             return servicequeja.listarcategorias();
         }
@@ -31,15 +33,15 @@ public class  QuejaServiceRest {
 
     @PostMapping("/registrarcategoria")
     public CategoriaQueja registrar(@RequestBody CategoriaQueja categoria) {
-        CategoriaQueja a;
+        CategoriaQueja b;
         try {
 
-            a = servicequeja.registrarcategoria(categoria);
+            b = servicequeja.registrarcategoria(categoria);
 
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No se pudo registrar " + e.getMessage(), e);
         }
-        return a;
+        return b;
     }
 
 }
